@@ -13,6 +13,9 @@ le programme va appeler un echo et créer un dossier correspondant au premier ar
 
 2)
 
-bash mystere.sh test
+```bash
+$ bash mystere.sh test
+Script : mystere.sh nom de repertoire: test
+```
 
-Permet de créer un dossier test depuis le programme.
+Cette commande permet de créer un dossier qui correspond au premier argument, test.
