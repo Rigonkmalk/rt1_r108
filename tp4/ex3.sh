@@ -7,12 +7,12 @@ echo "Veuillez entrer un nombre entre (1 - 100)"
 read x
 
 while [ $x -ne $a ]; do
+  clear
   if [ $x -gt $a ]; then
     echo "plus petit"
   else
     echo "plus grand"
   fi
-  clear
   echo "Veuillez entrer un nombre entre (1 - 100)"
   read x
 done
