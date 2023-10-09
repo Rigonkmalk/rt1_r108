@@ -1,0 +1,35 @@
+droitfichier.sh :
+
+#!/bin/sh
+regex="^([+-][rR]|[+-][wW])$"
+
+if [ $# -le 0 ]; then
+    echo "Error: no args"
+elif [[ $1 =~ $regex ]]; then
+    for i in *"$2"; do 
+        chmod g$1 $i
+    done
+else
+    echo "Error : Only +r; -r and -w ; +w"
+fi
+
+for.sh :
+
+#!/bin/sh
+for d in ../*/; do
+    if ( test -d $d ); then
+        echo $d
+    fi
+done
+
+while.sh :
+
+#!/bin/sh
+if [ $# -le 0 ]; then
+    echo "No args"
+else
+    while [ $# -gt 0 ]; do
+        echo $1
+        shift
+    done
+fi
