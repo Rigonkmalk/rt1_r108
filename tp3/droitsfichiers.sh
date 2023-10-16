@@ -1,5 +1,5 @@
 #!/bin/sh
-regex="^([+-][rR]|[+-][wW])$"
+regex="^([+-][rwRW])$"
 
 if [ $# -le 0 ]; then
     echo "Error: no args"
