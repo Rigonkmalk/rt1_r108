@@ -2,7 +2,11 @@
 
 echo "Veuillez entrer une valeur à deviner entre 1 et 100"
 read a
-clear
+
+if [[ $a -lt 1 || $a -gt 100 ]];then
+    echo "incorrect"
+    exit 1
+fi
 echo "Veuillez entrer un nombre entre (1 - 100)"
 read x
 
