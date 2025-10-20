@@ -72,9 +72,20 @@ ls -lh ~
 
 ## 3. interprétation des résultats
 
--l : Mise en place d'un listage au format long
--a : Affichage des fichiers cachés
--h : Affichage des tailles en unités humaines (Ko, Mo, Go)
+```bash
+ls -l
+#[...]
+drwxrwxr-x    - pazema 20 Oct 08:41 Scripts
+```
+`drwxrwxr-x` : La liste des permissions sur le dossier Scripts(d : directory) avec pour description : Le propriétaire a tous les droits, les utilisateurs du groupe ont le droit de lire et d'écrire, les autres utilisateurs ont le droit de lire et d'exécuter.
+
+`pazema` : Utilisateur propriétaire du dossier Scripts.
+
+`20` : Taille du dossier Scripts en octets.
+
+`Oct 08:41` : Date de dernière modification du dossier Scripts.
+
+`Scripts` : Nom du dossier Scripts.
 
 ## 4. Liens
 
