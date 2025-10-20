@@ -94,11 +94,11 @@ chmod a+x ~/Docs/Archives/archive_projet1.txt
 ## 2. Recherche dans un fichier
 
 ```bash
-grep "^[aA].*[eE]$" ~/Dico.txt > ~/Scripts/PRJ.txt
+grep "^a.*e$" ~/Dico.txt > ~/Scripts/PRJ.txt
 ```
 
 ```bash
-grep "^[rR].*" ~/Dico.txt | wc -l
+grep "^R.*" ~/Dico.txt | wc -l
 ```
 
 ## 3. Affichage
