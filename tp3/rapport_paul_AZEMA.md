@@ -14,6 +14,7 @@ le programme va appeler un echo et créer un dossier correspondant au premier ar
 2)
 
 ```bash
+# Run the script with "test" as argument to create a directory
 $ bash mystere.sh test
 Script : mystere.sh nom de repertoire: test
 ```
