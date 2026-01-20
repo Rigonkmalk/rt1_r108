@@ -13,17 +13,20 @@
 
 ```bash
    #!/bin/sh
+   # Check if exactly one argument is provided
    if [ $# -ne 1 ]; then
     echo "Fournir un nom en parametre"
     exit 1
    fi
+   # Check if directory already exists
    if ( test -d "$1" ); then
     echo "Répertoire "$1" existe déja"
     exit 0
    else
+    # Create the directory
     echo "Script : "$0" nom de repertoire: "$1" "
     mkdir "$1"
-   fi 
+   fi
 ```
 
 </div>
@@ -68,6 +71,7 @@ Pour contrôle, avant chaque modification des droits sur un fichier, le programm
 <div style="text-align: left">
 
 ```bash
+# Add write permission to all .txt files for the group
 droitsfichiers +w .txt
 ```
 </div>

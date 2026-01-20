@@ -4,6 +4,7 @@
 
 1.
 ```bash
+# Print home directory path
 echo $HOME
 /home/student/
 ```
@@ -11,6 +12,7 @@ echo $HOME
 2.
 
 ```bash
+# Print current working directory
 pwd
 ```
 
@@ -22,12 +24,14 @@ HOME=/Users/paulazema
 
 4.
 ```bash
+# Navigate to root directory
 cd /
 ```
 
 
 5.
 ```bash
+# List files with detailed info
 ls -l
 ```
 
@@ -35,11 +39,13 @@ ls -l
 
 1.
 ```bash
+# Go to home directory
 cd ~
 ```
 
 2.
 ```bash
+# Create/edit file with nano editor
 nano toto
 toto
 <C>+X Y
@@ -47,6 +53,7 @@ toto
 
 3.
 ```bash
+# Show file details
 ls -l toto
 ```
 
@@ -59,6 +66,7 @@ Les 4 autres bytes (ou plus selon les caractères mis en place) seront les valeu
 
 5.
 ```bash
+# Display file content
 cat toto
 ```
 
@@ -66,16 +74,19 @@ cat toto
 
 1.
 ```bash
+# Go to home directory
 cd ~
 ```
 
 2.
 ```bash
-ls 
+# List directory contents
+ls
 ```
 
 3.
 ```bash
+# Remove all files/folders (use with caution!)
 rm -fr *
 ```
 

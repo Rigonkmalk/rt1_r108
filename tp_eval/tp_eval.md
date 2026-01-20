@@ -5,6 +5,7 @@
 ## 1. Création de répertoire
 
 ```bash
+# Create multiple directories using brace expansion
 mkdir ~/{Projets,Docs,Scripts}/
 mkdir ~/Projets/Sous-Repertoire/
 mkdir ~/Docs/Archives/
@@ -13,8 +14,11 @@ mkdir ~/Docs/Archives/
 ## 2. Création de fichiers
 
 ```bash
+# Create empty files
 touch ~/Projets/projet1.txt ~/Projets/projet2.txt
+# Write text to file
 echo -e "Ajout de texte" > ~/Projets/projet1.txt
+# Add execute permission for user and group
 chmod ug+x ~/Projets/projet1.txt
 ```
 
@@ -51,6 +55,7 @@ drwxr-x---@ - pazema 20 Oct 08:41 ..
 ## 4. Suppression d'un fichiers
 
 ```bash
+# Delete a file
 rm ~/Projets/projet2.txt
 ```
 
@@ -59,14 +64,18 @@ rm ~/Projets/projet2.txt
 ## 1. Listage simple
 
 ```bash
+# Simple listing of home directory
 ls ~
 ```
 
 ## 2. Options de Listage
 
 ```bash
+# Long format with details
 ls -l ~
+# Show hidden files
 ls -a ~
+# Human-readable file sizes
 ls -lh ~
 ```
 
@@ -90,6 +99,7 @@ drwxrwxr-x    - pazema 20 Oct 08:41 Scripts
 ## 4. Liens
 
 ```bash
+# Create a hard link
 ln ~/Projets/projet1.txt ~/Scripts/PRJ.txt
 ```
 
@@ -98,23 +108,28 @@ ln ~/Projets/projet1.txt ~/Scripts/PRJ.txt
 ## 1. Copie et déplacement de fichiers
 
 ```bash
+# Copy file to another location
 cp ~/Projets/projet1.txt ~/Docs/Archives/archive_projet1.txt
+# Add execute permission for all users
 chmod a+x ~/Docs/Archives/archive_projet1.txt
 ```
 
 ## 2. Recherche dans un fichier
 
 ```bash
+# Find lines starting with 'a' and ending with 'e'
 grep "^a.*e$" ~/Dico.txt > ~/Scripts/PRJ.txt
 ```
 
 ```bash
+# Count lines starting with 'R'
 grep "^R.*" ~/Dico.txt | wc -l
 ```
 
 ## 3. Affichage
 
 ```bash
+# Display file content
 cat ~/Scripts/PRJ.txt
 ```
 
@@ -123,10 +138,12 @@ NB : La commande `more` peux aussi être utilisé pour parcourir le contenu du f
 ## 4. Recherche dans un fichier
 
 ```bash
+# Case-insensitive: lines starting with a/A and ending with e/E
 grep "^[aA].*[eE]$" ~/Dico.txt > ~/Scripts/PRJ.txt
 ```
 
 ```bash
+# Count lines starting with r or R
 grep "^[rR].*" ~/Dico.txt | wc -l
 ```
 
@@ -145,6 +162,7 @@ NB : La commande `more` peux aussi être utilisé pour parcourir le contenu du f
 ## 2. Exécution
 
 ```bash
+# Make script executable and run it
 chmod +x check_files.sh
 ./check_files.sh toto.txt
 ```
