@@ -310,9 +310,46 @@ le fichier symbolique n'est plus accessible et ne permet plus d'accéder au cont
 
 Ouvrez le fichier physique. Que se passe-t-il ? Concluez
 
-```
+```bash
 cat physique
 je suis un texte long
 ```
 
 Je conclue que le fichier physique est toujours accessible et contient le contenu du fichier original avant d'avoir été altéré par l'utilisateur.
+
+## 5 La commande grep
+
+Effectuez les recherches suivantes sur ce dictionnaire à l'aide du "filtre" `grep` sur le fichier `dico_francais.txt`
+
+
+### 1
+
+Liste des mots se terminant par les lettres `cot`
+
+```bash
+grep 'cot$' dico_francais.txt
+```
+
+### 2
+
+Commençant par ab et terminant par t
+
+```bash
+grep '^ab.*t$' dico_francais.txt
+```
+
+### 3
+
+commençant par `[a-l]`
+
+```bash
+grep '^[a-l]' dico_francais.txt
+```
+
+### 4
+
+compter le nombre de mots commençant par `V`
+
+```bash
+grep '^V' dico_francais.txt | wc -l
+```
