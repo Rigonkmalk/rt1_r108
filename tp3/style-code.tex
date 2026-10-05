@@ -1,0 +1,56 @@
+% ---------------------------------------------------------------
+% Style des blocs de code pour pandoc -> LaTeX -> PDF (tectonic)
+% Usage : pandoc doc.md -o doc.pdf --pdf-engine=tectonic \
+%           -H style-code.tex --highlight-style=tango
+% ---------------------------------------------------------------
+
+\usepackage{fvextra}      % Verbatim amelioré : retour à la ligne automatique
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% --- Symboles Unicode absents de Latin Modern (⚠, ✅, ❌, ℹ) ---
+% fontawesome5 fournit des icônes vectorielles, sans dépendre d'une police système.
+\usepackage{fontawesome5}
+\usepackage{newunicodechar}
+\definecolor{warnorange}{HTML}{E8A33D}
+\newunicodechar{⚠}{{\textcolor{warnorange}{\faExclamationTriangle}}}
+\newunicodechar{✅}{{\textcolor{green!60!black}{\faCheckCircle}}}
+\newunicodechar{❌}{{\textcolor{red!70!black}{\faTimesCircle}}}
+\newunicodechar{ℹ}{{\textcolor{blue!60!black}{\faInfoCircle}}}
+
+% --- Palette (style GitHub clair) ---
+\definecolor{codebg}{HTML}{F6F8FA}      % fond du bloc
+\definecolor{codeframe}{HTML}{D0D7DE}   % bordure
+\definecolor{inlinebg}{HTML}{EFF1F3}    % fond du code inline
+
+% --- Bloc de code : boîte arrondie, coupable sur plusieurs pages ---
+\renewenvironment{Shaded}{%
+  \begin{tcolorbox}[
+    breakable,
+    enhanced,
+    colback=codebg,
+    colframe=codeframe,
+    boxrule=0.6pt,
+    arc=3pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+    before skip=10pt, after skip=10pt
+  ]%
+}{%
+  \end{tcolorbox}%
+}
+
+% --- Contenu du bloc : police plus petite + wrapping des longues lignes ---
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{%
+  commandchars=\\\{\},
+  fontsize=\small,
+  breaklines,
+  breakanywhere,
+  breaksymbolleft={\footnotesize\textcolor{gray}{$\hookrightarrow$\space}}
+}
+
+% --- Code inline `comme ceci` : petit badge gris ---
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{%
+  \colorbox{inlinebg}{\small\oldtexttt{#1}}%
+}
