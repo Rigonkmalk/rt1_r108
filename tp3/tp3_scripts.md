@@ -58,3 +58,32 @@ Exemple d'utilisation (le script s'appelle droitsfichiers) :
 # Add write permission to all .txt files for the group
 droitsfichiers +w .txt
 ```
+
+### **Exercice 5** – Le `case` et la saisie clavier
+
+Écrire un programme shell `menu` qui affiche un menu à l'utilisateur, lit son choix au clavier,
+puis exécute l'action correspondante :
+
+1. Afficher la date et l'heure
+2. Afficher le nom de l'utilisateur courant
+3. Afficher le nombre de fichiers du répertoire courant
+4. Quitter
+
+Tout autre choix affichera « Choix invalide » et le menu sera réaffiché.
+Le programme ne s'arrête que lorsque l'utilisateur saisit `4`.
+
+**Indication** ⚠ : Utilisez une boucle `while true`, la commande `read` pour lire la saisie,
+et la structure `case ... in ... esac` pour traiter les différents choix.
+Pensez à `break` pour sortir de la boucle.
+
+```bash
+# Squelette attendu
+while true; do
+  echo "1) Date  2) Utilisateur  3) Nb fichiers  4) Quitter"
+  read -p "Votre choix : " choix
+  case "$choix" in
+    1) ... ;;
+    *) echo "Choix invalide" ;;
+  esac
+done
+```
